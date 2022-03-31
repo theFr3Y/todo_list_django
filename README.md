@@ -1,8 +1,11 @@
 Simple todo list project
 
 capabilities:
+
 -build and store any todo in the database
+
 -personal display of todo list only to author and super user
+
 -it has no special complexity
 
 how to use:
