@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+</head>
+<body>
+<form method="POST">{% csrf_token %}
+    <div id="container">
+    <h1>To-Do List <button type="submit" class="fa fa-plus btn-primary"></button></h1> <input type="text" placeholder="Add New Todo" name="title">
+    <ul>
+        {% for articles in article %}
+        <li><span><a href="{% url 'main:delete' articles.id %}"><i class="fa fa-trash text-white"></i></a></span>{{ articles.title }}</li>
+        {% endfor %}
+    </ul>
+</div>
+</form>
+
+ <script src="{% static 'js.js' %}"></script>
+ <script src=""></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</body>
+</html>
