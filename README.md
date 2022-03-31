@@ -10,6 +10,6 @@ capabilities:
 
 how to use:
 1. migrate the project first
-2. create a superuser user(createsuperuser)
+2. create a superuser(createsuperuser)
 3. runserver
 4. login to project at 127.0.0.1:8000/admin
