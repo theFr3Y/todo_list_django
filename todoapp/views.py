@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import TodoModel
+from django.contrib.auth.models import User
+from django.http import HttpResponse
 
 def TodoView(request):
+    if request.user.id == None:
+        return HttpResponse("pls login")
     if request.method == 'POST':
         data = request.POST
         blog = TodoModel.objects.create(title = data['title'], author = request.user)
